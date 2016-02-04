@@ -1257,4 +1257,8 @@ nav>button>span:after{
 	    top: 11px;
 	    position: relative;
 	}
+
+	header>div>nav>ul{
+		overflow: hidden;
+	}
 }
