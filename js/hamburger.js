@@ -117,16 +117,16 @@ hamburger.addEventListener("click", function(){
 });
  
 setInterval(function(){
-	scroll1 = body.scrollTop;
+	scroll1 = window.pageYOffset;
 	setTimeout(function(){
-		scroll2 = body.scrollTop;
+		scroll2 = window.pageYOffset;
 	}, 0.1);
 	if (scroll1>scroll2){
-			if (body.scrollTop>64){
+			if (window.pageYOffset>64){
 				header.classList.add("scrollDown");
 			} else {
 				for (var i=0; i<=64; i++){
-					if (body.scrollTop == i){
+					if (window.pageYOffset == i){
 						header.style.marginTop = -i + "px";
 					}
 				}
@@ -136,38 +136,3 @@ setInterval(function(){
 			header.style.marginTop = "0";
 		}
 }, 0.2);
-
-// function displaywheel(e){
-//     var evt=window.event || e; //equalize event object
-//     var delta=evt.detail? evt.detail*(-120) : evt.wheelDelta; //check for detail first so Opera uses that instead of wheelDelta
-//     // document.getElementById("wheelvalue").innerHTML=delta //delta returns +120 when wheel is scrolled up, -120 when down
-
-// 	if (!header.classList.contains("hamburgerActive")){
-// 		if (delta<0){
-// 			if (body.scrollTop>64){
-// 				header.classList.add("scrollDown");
-// 			} else {
-// 				for (var i=0; i<=64; i++){
-// 					if (body.scrollTop == i){
-// 						console.log(i);
-// 						header.style.marginTop = -i + "px";
-// 					}
-// 				}
-// 			}
-// 		} else if (delta>0){
-// 			header.classList.remove("scrollDown");
-// 			header.style.marginTop = "0";
-// 		}
-//     }
-// }
-
-// var mousewheelevt=(/Firefox/i.test(navigator.userAgent))? "DOMMouseScroll" : "mousewheel"; //FF doesn't recognize mousewheel as of FF3.x
- 
-// if (document.attachEvent){ //if IE (and Opera depending on user setting)
-//     document.attachEvent("on"+mousewheelevt, displaywheel);
-// } else if (document.addEventListener){ //WC3 browsers
-//     document.addEventListener(mousewheelevt, displaywheel, false);
-// }
-
-// Bron scrollen: http://www.javascriptkit.com/javatutors/onmousewheel.shtml
-
