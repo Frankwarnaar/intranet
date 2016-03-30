@@ -614,6 +614,7 @@ nav>button>span{
 	background: #424242;
 	position: relative;
 	left: 17%;
+	will-change: transform;
 }
 
 nav>button>span:before{
@@ -625,6 +626,7 @@ nav>button>span:before{
 	display: block;
 	content: '';
 	bottom: -.5rem;
+	will-change: bottom;
 }
 
 nav>button>span:after{
@@ -636,6 +638,7 @@ nav>button>span:after{
 	display: block;
 	content: '';
 	top: -.5rem;
+	will-change: top;
 }
 
 .hamburgerActive>span:before {
